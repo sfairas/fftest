@@ -22,7 +22,7 @@ public class Normaliser {
 
   public String normalise(String s) {
     if(StringUtils.isBlank(s)) {
-      throw new InvalidParameterException("String value is empty or null");
+      throw new IllegalArgumentException("String value is empty or null");
     }
     LevenshteinDistance ld = new LevenshteinDistance();
 
