@@ -2,6 +2,7 @@ package sfairas.test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.EmptyStackException;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -101,4 +102,27 @@ class FeefoTestApplicationTests {
     assertTrue(modes4.contains(100));
   }
   
+  @Test
+  void problem3(){
+    //problem 3
+    StackList<Integer> myStack = new StackList<>();
+    assertTrue(myStack.empty());
+    
+    myStack.push(1);
+    assertTrue(!myStack.empty());
+    myStack.push(2);
+    assertTrue(myStack.peek() == 2);
+    myStack.push(3);
+    myStack.push(4);
+    assertTrue(myStack.peek() == 4);
+    assertTrue(myStack.pop() == 4);
+    assertTrue(myStack.peek() == 3);
+    
+    myStack.pop();
+    assertTrue(myStack.pop() == 2);
+    myStack.pop();
+    assertTrue(myStack.empty());
+  
+  }
+    
 }
