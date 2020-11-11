@@ -121,8 +121,18 @@ class FeefoTestApplicationTests {
     myStack.pop();
     assertTrue(myStack.pop() == 2);
     myStack.pop();
-    assertTrue(myStack.empty());
+    assertTrue(myStack.empty());  
+  }
   
+  @Test
+  void problem3Part2(){
+    StackList<Integer> observable = new StackList<Integer>();
+    StackListObserver<Integer> observer = new StackListObserver<Integer>();
+     
+    observable.addObserver(observer);
+    observable.push(11);
+    assertTrue(observer.getSl().get(0)==11);
+
   }
     
 }
